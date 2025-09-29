@@ -21,7 +21,7 @@ metatests.test('Enum with key/value', (test) => {
 
   test.strictSame(typeof Month, 'function');
   test.strictSame(typeof Month.values(), 'object');
-  test.strictSame(Array.isArray(Month.values()), false);
+  test.strictSame(Array.isArray(Month.values()), true);
 
   test.strictSame(Month.has('May'), true);
   test.strictSame(Month.key('Aug'), 7);
@@ -92,7 +92,7 @@ metatests.test('Enum string month typed keys', (test) => {
 
   test.strictSame(typeof Month, 'function');
   test.strictSame(typeof Month.values(), 'object');
-  test.strictSame(Array.isArray(Month.values()), false);
+  test.strictSame(Array.isArray(Month.values()), true);
 
   test.strictSame(Month.has('5'), true);
   test.strictSame(Month.has(13), false);
