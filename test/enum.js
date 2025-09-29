@@ -20,8 +20,8 @@ metatests.test('Enum with key/value', (test) => {
   });
 
   test.strictSame(typeof Month, 'function');
-  test.strictSame(typeof Month.values, 'object');
-  test.strictSame(Array.isArray(Month.values), false);
+  test.strictSame(typeof Month.values(), 'object');
+  test.strictSame(Array.isArray(Month.values()), false);
 
   test.strictSame(Month.has('May'), true);
   test.strictSame(Month.key('Aug'), 7);
@@ -55,7 +55,7 @@ metatests.test('Enum string month keys', (test) => {
   );
 
   test.strictSame(typeof Month, 'function');
-  test.strictSame(Array.isArray(Month.values), true);
+  test.strictSame(Array.isArray(Month.values()), true);
 
   test.strictSame(Month.has('May'), true);
   test.strictSame(Month.has('Aug'), false);
@@ -91,8 +91,8 @@ metatests.test('Enum string month typed keys', (test) => {
   });
 
   test.strictSame(typeof Month, 'function');
-  test.strictSame(typeof Month.values, 'object');
-  test.strictSame(Array.isArray(Month.values), false);
+  test.strictSame(typeof Month.values(), 'object');
+  test.strictSame(Array.isArray(Month.values()), false);
 
   test.strictSame(Month.has('5'), true);
   test.strictSame(Month.has(13), false);
@@ -122,8 +122,8 @@ metatests.test('Enum hundreds keys', (test) => {
   test.strictSame(Hundreds.from('Hello'), Enum.NaE);
 
   test.strictSame(typeof Hundreds, 'function');
-  test.strictSame(Array.isArray(Hundreds.values), true);
-  test.strictSame(Hundreds.values.length, 5);
+  test.strictSame(Array.isArray(Hundreds.values()), true);
+  test.strictSame(Hundreds.values().length, 5);
 
   test.strictSame(h100.name, 100);
   test.strictSame(h100.index, 0);
