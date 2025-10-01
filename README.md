@@ -653,9 +653,54 @@ Merge multiple objects with merger
 
 - `<Symbol>` Not an Enum
 
-#### Enum.from(...args)
-
 #### Enum.prototype.constructor()
+
+#### Enum.from(...args)
+- `args`: [`<Array>`][array] arguments
+
+_Returns:_ [`<Class>`][class] `EnumClass`
+
+Create enumerations with optional values
+
+_Example_:
+
+```js
+Enum.from('June', 'July', 'August');
+// or
+Enum.from({
+  September: 9,
+  October: 10,
+  November: 11.
+});
+```
+
+### class EnumClass
+
+#### EnumClass.prototype.constructor(index, name, value)
+- `index`: [`<number>`][number] sequential index for a member
+- `name`: `<any>` provided name for a member
+- `value`: `<any>`|[`<undefined>`][undefined] a specific backing value if provided
+
+#### EnumClass.from(name)
+- `name`: `<any>` enum member name to search for
+
+_Returns:_ [`<Object>`][object]|[`<Symbol>`][symbol] `EnumClass` instance or `NotAnEnum` symbol
+
+#### EnumClass.values()
+
+_Returns:_ [`<Object[]>`][object] an array of `EnumClass` instances
+
+#### EnumClass.has(name)
+
+- `name`: `<any>`
+
+_Returns:_ [`<boolean>`][boolean] a boolean if enum has such a member
+
+#### EnumClass.key(name)
+
+- `name`: `<any>`
+
+_Returns:_ [`<number>`][number] the index of the enum member
 
 ### forwardEvents(from, to\[, events\])
 
@@ -1871,3 +1916,5 @@ See github for full [contributors list](https://github.com/metarhia/common/graph
 [buffer]: https://nodejs.org/api/buffer.html#buffer_class_buffer
 [eventemitter]: https://nodejs.org/api/events.html#events_class_eventemitter
 [writable]: https://nodejs.org/api/stream.html#stream_class_stream_writable
+[class]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes
+[symbol]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol
